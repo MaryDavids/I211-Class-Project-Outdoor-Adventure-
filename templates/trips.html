@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %} Outdoor Adventure Trips! {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row"></div>
+        <h1> Outdoor Adventuring Company Trips </h1>
+        <!-- {{memberss}} -->
+        <table class="table">
+            <tr>
+                        
+                <th>Trip Name </th>
+                <th>Start Date</th>
+                <th>Trip Length </th>
+                <th>Location </th>
+                <th>Cost </th>
+
+            </tr>
+        
+            {%for tri in tripss%}
+                    <tr>
+                    
+                        <td> 
+                            <a href="{{url_for('trips', trip_id= tri['name'])}}"> {{tri['name']}} </a>
+                        </td>
+                        <td> {{tri['start_date']}} </td>
+                        <td>{{tri['length']}}</td>
+                        <td>{{tri['location']}}</td>
+                        <td>{{tri['cost']}}</td>
+                    </tr>
+                
+            {% endfor %}
+        </table>
+        <a class ='btn btn-outline-success' type="button" href="{{url_for('add_trips' )}}"> Add Trip </a> 
+
+    </div> 
+
+</div>
+
+
+{% endblock %}

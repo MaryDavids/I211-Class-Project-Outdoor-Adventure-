@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %} Outdoor Adventure Member Form {% endblock %}
+{% block content %}
+
+<!-- fix url here v -->
+<form action="{{url_for('add_members')}}" method ="POST" name ="add_members">
+
+    <div class="container">
+        <h1>Outdoor Adventure Member Form</h1>
+        <p class="h2 pt-3 pb-3"> Add a New Member </p>
+
+        <div class="form-group">
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Name: </label>
+                <div class="col-sm-5"> <input type="text" id="name" name="name" value=""> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputAddress"> Address: </label>
+                <div class="col-sm-5"> <input type="text" id="address" name="address" value=""> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Email: </label>
+                <div class="col-sm-5"><input type="email" id="email" name="email" value=""> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Phone: </label>
+                <div class="col-sm-5"><input type="tel"  placeholder="(xxx) xxx-xxxx" id="phone" name="phone" value=""> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> DOB: </label>
+                <div class="col-sm-5"><input type="date" id="date" name="date" value=""> </div>
+            </div>
+            
+        
+        </div>
+        <!-- fix url for buttons ** -->
+        <!-- <div class="col-sm-5"> -->
+            <!-- <a class ='btn btn-outline-success' type="button" value href="{{url_for('add_members' )}}"> Save </a> 
+            <a class ='btn btn-outline-secondary' type="button" href="{{url_for('add_members' )}}"> Reset </a>  -->
+        <!-- </div> -->
+        <button class ='btn btn-outline-success' type="submit" value="Submit">Submit</button>
+        <button class ='btn btn-outline-success' type="reset" value="Reset">Reset</button>
+
+    </div>
+</form>
+
+{% endblock %}

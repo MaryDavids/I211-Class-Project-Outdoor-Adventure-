@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} Outdoor Adventures {% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row"></div>
+            <h2> Outdoor Adventures </h2>
+            <p> Welcome to Outdoor Adventures! </p>
+            <p>We are here to ensure your 
+                planning and logistics for all your adventures go smoothly. 
+                Worry about your FUN and leave the planning to us!  </p>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <img class="img-fluid" src="{{url_for('static', filename='images/homePicture.jpeg')}}">
+                <br>
+                <br>
+                &emsp;
+                <a class ='btn btn-outline-success' type="button" href="{{url_for('trips')}}"> Explore Trips</a>   <!--comment class or type -->
+                &emsp; <!-- Geeks for Geeks-->
+                <a class ='btn btn-outline-success' type="button" href="{{url_for('members' )}}"> See Members </a> 
+
+            <!-- {% for dino in dinosaurs %}   {#to make for loops#}
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <h2>{{dinosaurs[dino]['name']}}</h2>
+                <a href="{{url_for('index', dino=dino)}}">
+                    <figure>
+                        <img class="img-fluid" src="{{url_for('static', filename='images/' + dinosaurs[dino]['image'])}}"
+                        alt="{{dino}}">
+                        <figcaption>{{dinosaurs[dino]['image-credit']}}</figcaption>
+                    </figure>
+                    </a> 
+            </div>
+        {% endfor %} -->
+        </div> 
+    </div>
+    
+    
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %} Outdoor Adventuring Club! {% endblock %}
+{% block content %}
+<link rel="shortcut icon" href="static/images/planeLogo.jpg">
+
+
+    <h1>{{one_trip['name']}}</h1>
+    <p> Start Date: {{one_trip['start_date']}}</p>
+    <p> Trip Length: {{one_trip['length']}}</p>
+    <p>Activity Level: {{one_trip['level']}}</p>
+    <p>Location: {{one_trip['location']}}</p>
+    <p>Cost: {{one_trip['cost']}}</p>
+    <p>Trip Leader: {{one_trip['leader']}}</p>
+    <p>Description: {{one_trip['description']}}</p>
+
+   {# <!-- <a class ='btn btn-outline-success' type="button" href="{{url_for('edit_trips')}}"> Edit Trip </a> 
+    <a class ='btn btn-outline-success' type="button" href="{{url_for('del_trips')}}"> Delete this Trip </a>  --> #}
+
+
+    <a class ='btn btn-outline-success' type="button" value="edit_trips" href="{{url_for('edit_trips', trip_id = one_trip['name'])}} "> Edit Trip </a> 
+    <a class ='btn btn-outline-success' type="button" value="del_trips" href="{{url_for('del_trips', trip_id = one_trip['name'])}} "> Delete Trip </a> 
+
+    {# <a class ='btn btn-outline-success' type="button" href="{{'url_for('del_trips , trip_id = one_trip['name'])'}} "> Delete this Trip </a> #}
+    &nbsp;
+    &nbsp;
+    
+    <div class="container">
+        <div class="row">
+            <h1> Attendees </h1>
+            <table class="table">
+                <tr>
+                            
+                    <th>Name </th>
+                    <th>DoB</th>
+                    <th>Email </th>
+                    <th>Address </th>
+                    <th>Phone </th>
+                </tr>
+            
+
+                {%for mem in memberss%}
+                        <tr>
+                            <td> {{mem['name']}}</td>
+                            <td> {{mem['date_of_birth']}} </td>
+                            <td>{{mem['email']}}</td>
+                            <td>{{mem['address']}}</td>
+                            <td>{{mem['phone']}}</td>
+                        </tr>
+                    
+                {% endfor %}
+            </table>
+
+    <!-- /1
+    /0 -->
+
+{# enumerating elements in dictionary for index number#}
+{# use index num for urls of trip-ids #}
+
+
+{% endblock %}

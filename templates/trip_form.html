@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %} Outdoor Adventure Trip Form {% endblock %}
+{% block content %}
+
+<div class="container"></div>
+    {% if this_trip %}
+
+    <form action="{{url_for('edit_trips', trip_id= this_trip['id_trip'])}}" method ="POST" name ="edit_trips">
+    
+        <h1>Outdoor Adventure Trip Form</h1>
+        <p class="h2 pt-3 pb-3"> Edit a Trip </p>
+        <div class="form-group">
+    
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Name: </label>
+                <div class="col-sm-5"> <input type="text" id="name" name="name" value='{{this_trip["name"]}}'> </div>
+            </div>
+    
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Location: </label>
+                <div class="col-sm-5"> <input type="text" id="location" name="location" value='{{this_trip["location"]}}'> </div>
+            </div>
+
+
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Length: </label>
+                <div class="col-sm-5"> 
+                    <select name="length" id="length" value='{{this_trip["length"]}}'>
+                        <option {% if this_trip.length == " " %} selected="selected" {% endif %}value="select">--Select--</option>
+                        <option {% if this_trip.length == 1 %} selected="selected" {% endif %} value="1"> 1 days</option>
+                        <option {% if this_trip.length == 3 %} selected="selected" {% endif %} value="3" >3 days</option>
+                        <option {% if this_trip.length == 5 %} selected="selected" {% endif %}value="5">5 days</option>                        
+                        <option {% if this_trip.length == 7 %} selected="selected" {% endif %} value="7">7 days</option>
+                        <option {% if this_trip.length == 9 %} selected="selected" {% endif %}value="9">9 days</option>
+                    </select> 
+                </div>
+            </div>
+    
+            <div class="form-row pb-3">
+                <label for="inputName"> Activity Level: </label>
+                <div class="col-sm-5"> 
+                    <select name="level" id="level" value='{{this_trip["level"]}}'>
+                        <option value="select">--Select--</option>
+                        <option {% if this_trip.level == "Beginner" %} selected="selected" {% endif %}value="Beginner">Beginner</option>
+                        <option  {% if this_trip.level == "Intermediate" %} selected="selected" {% endif %}value="Intermediate">Intermediate</option>
+                        <option  {% if this_trip.level == "Advanced" %} selected="selected" {% endif %}value="Advanced">Advanced</option>
+                    </select> 
+                </div>
+            </div>
+    
+            <div class="form-row pb-3">
+                <label for="inputName"> Start Date: </label>
+                <div class="col-sm-5"> <input type="date" id="start_date" name="start_date" value='{{this_trip["start_date"]}}'> </div>
+            </div>
+    
+            <div class="form-row pb-3">
+                <label for="inputName"> Cost: </label>
+                <div class="col-sm-5"> <input type="money" id="cost" name="cost" value='{{this_trip["cost"]}}'> </div>
+            </div>
+    
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Leader: </label>
+                <div class="col-sm-5"> <input type="text" id="leader" name="leader" value='{{this_trip["leader"]}}'> </div>
+            </div>
+    
+            <div class="form-row pb-3">
+                <label for="inputName"> Description: </label>
+                <div class="col-sm-5"> <input type="money" id="description" name="description" value='{{this_trip["description"]}}'> </div>
+            </div>
+    
+    
+    
+        </div>
+        <!-- fix url for buttons ** --> 
+        <!-- <div class="col-sm-5"> -->
+            <!-- <a class ='btn btn-outline-success' type="submit" href="{{url_for('add_trips' )}}"> Save </a> 
+            <a class ='btn btn-outline-secondary' type="reset" href="{{url_for('add_trips' )}}"> Reset </a>  -->
+            
+            <button class ='btn btn-outline-success' type="submit" value="Submit">Submit</button>
+            <button class ='btn btn-outline-success' type="reset" value="Reset">Reset</button>
+
+    </div>
+    {% else %}
+        
+
+    <form action="{{url_for('add_trips')}}" method ="POST" name ="add_trips">
+
+
+
+        <h1>Outdoor Adventure Trip Form</h1>
+        <p class="h2 pt-3 pb-3"> Add a New Trip </p>
+        <div class="form-group">
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Name: </label>
+                <div class="col-sm-5"> <input type="text" id="name" name="name" value=''> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Location: </label>
+                <div class="col-sm-5"> <input type="text" id="location" name="location" value=''> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Length: </label>
+                <div class="col-sm-5"> 
+                    <select name="length" id="length" value=''>
+                        <option value="select">--Select--</option>
+                        <option value="1"> 1 days</option>
+                        <option value="3" >3 days</option>
+                        <option value="5">5 days</option>                        
+                        <option value="7">7 days</option>
+                        <option value="9">9 days</option>                   
+                    </select> 
+                </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Activity Level: </label>
+                <div class="col-sm-5"> 
+                    <select name="level" id="level" value=''>
+                        <option value="select">--Select--</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select> 
+                </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Start Date: </label>
+                <div class="col-sm-5"> <input type="date" id="start_date" name="start_date" value=''> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Cost: </label>
+                <div class="col-sm-5"> <input type="currency" id="cost" name="cost" value='$ '> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Trip Leader: </label>
+                <div class="col-sm-5"> <input type="text" id="leader" name="leader" value=''> </div>
+            </div>
+
+            <div class="form-row pb-3">
+                <label for="inputName"> Description: </label>
+                <div class="col-sm-5"> <input type="currency" id="description" name="description" value=''> </div>
+            </div>
+
+
+
+        </div>
+        <!-- fix url for buttons ** --> 
+        <!-- <div class="col-sm-5"> -->
+            <!-- <a class ='btn btn-outline-success' type="submit" href="{{url_for('add_trips' )}}"> Save </a> 
+            <a class ='btn btn-outline-secondary' type="reset" href="{{url_for('add_trips' )}}"> Reset </a>  -->
+
+            <button class ='btn btn-outline-success' type="submit" value="Submit">Submit</button>
+            <button class ='btn btn-outline-success' type="reset" value="Reset">Reset</button>
+</div>
+{% endif %}
+
+{% endblock %}
