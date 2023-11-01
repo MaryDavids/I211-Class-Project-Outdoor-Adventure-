@@ -1,0 +1,16 @@
+name,start_date,length,cost,location,level,leader,description
+Crazy Rapids Rafting,4/12/23,1,$40,Grand Canyon,Advanced,John Smith,Need swim vests
+Scuba Steve's Reef Adventure,4/1/23,3,$50,Yellowood State Park,Beginner,Roda Bentley,Need scuba gear
+Old Knobstone Trail Hike,4/7/23,5,$10,Knobstone Lake Trail,Beginner,Sheila Rhodes,Need hiking shoes and water bottle
+Treehouse Building,4/5/23,7,$60,Turpertine Creek Tree Houses,Intermediate,Sope Kolawole,Need safety kit and supervision
+Carson's Canoe Camping,5/3/23,9,$30,White River,Intermediate,Jake Whitehouse,Need swim vests 
+Texas Horseback Riding,5/19/23,3,$40,Stone Creek Ranch,Intermediate,Sadie Disney,Need protective gear and shoes 
+,,,,,,,
+
+Crazy Rapids Rafting,Grand Canyon,3,Advanced,4/12/23,$40,John Smith,Need swim vests
+Scuba Steve's Reef Adventure,Yellowood State Park,1,Beginner,4/1/23,$50,Roda Bentley,Need scuba gear
+Old Knobstone Trail Hike,Knobstone Lake Trail,5,Beginner,4/7/23,$10,Sheila Rhodes,Need hiking shoes and water bottle
+Treehouse Building,Turpertine Creek Tree Houses, 7,intermediate,4/5/23, $60,Sope Kolawole,Need safety kit and supervision
+Carson's Canoe Camping,White River,9,Intermediate,5/3/23,$30,Jake Whitehouse,Need swim vests 
+Texas Horseback Riding,Stone Creek Ranch,3,Intermediate,5/19/23,$40,Sadie Disney,Need protective gear and shoes 
+
